@@ -5,8 +5,9 @@ import { VitePWA } from 'vite-plugin-pwa'
 // https://vite.dev/config/
 export default defineConfig({
   // GitHub Pages ("Deploy from a branch") sirve el sitio bajo
-  // https://jcbarbog.github.io/App-OCR/, no en la raíz del dominio. Este base
-  // path debe coincidir EXACTO (mayúsculas incluidas) con el nombre del repo.
+  // https://jcbarbog.github.io/EBO/, no en la raíz del dominio. Este base
+  // path debe coincidir EXACTO (mayúsculas incluidas) con el nombre del
+  // repo: JCBarboG/EBO.
   base: '/EBO/',
   plugins: [
     react(),

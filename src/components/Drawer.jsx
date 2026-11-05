@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useApp } from '../context/AppContext';
 import { useT } from '../i18n/translations';
+import Icon from './Icons';
 
 export default function Drawer({ open, onClose, onNewRecord, onExport, onOpenConfig, onNavigate }) {
   const { lang } = useApp();
@@ -29,7 +30,7 @@ export default function Drawer({ open, onClose, onNewRecord, onExport, onOpenCon
             <span className="drawer-title">EBO</span>
             <span className="drawer-subtitle">{t.menu.subtitle}</span>
           </div>
-          <button type="button" className="drawer-close" onClick={onClose} aria-label="Cerrar menú">✕</button>
+          <button type="button" className="drawer-close" onClick={onClose} aria-label={t.ui.close}><Icon name="close" size={20} /></button>
         </div>
 
         <nav className="drawer-nav">
@@ -39,11 +40,20 @@ export default function Drawer({ open, onClose, onNewRecord, onExport, onOpenCon
           <button type="button" className="drawer-item" onClick={() => handleItem(onExport)}>
             {t.menu.export}
           </button>
+          <button type="button" className="drawer-item" onClick={() => handleItem(() => onNavigate('history'))}>
+            {t.menu.history}
+          </button>
           <button type="button" className="drawer-item" onClick={() => handleItem(onOpenConfig)}>
             {t.menu.config}
           </button>
+          <button type="button" className="drawer-item" onClick={() => handleItem(() => onNavigate('guide'))}>
+            {t.menu.guide}
+          </button>
           <button type="button" className="drawer-item" onClick={() => handleItem(() => onNavigate('support'))}>
             {t.menu.support}
+          </button>
+          <button type="button" className="drawer-item" onClick={() => handleItem(() => onNavigate('personalize'))}>
+            {t.perso.title}
           </button>
           <button type="button" className="drawer-item" onClick={() => handleItem(() => onNavigate('about'))}>
             {t.menu.about}
